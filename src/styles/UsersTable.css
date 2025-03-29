@@ -1,0 +1,87 @@
+/* Contenedor general de la tabla */
+.users-table-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título */
+.users-table-container h1 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Mensajes de error y carga */
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.loading-message {
+    color: #555;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Tabla */
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #f9f9f9;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.users-table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Celdas de datos */
+.users-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Filas alternas */
+.users-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover en filas */
+.users-table tr:hover {
+    background-color: #e9f7ff;
+    cursor: pointer;
+}
+
+/* Sin datos */
+.no-data {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+/* Esquinas redondeadas en encabezado */
+.users-table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.users-table th:last-child {
+    border-top-right-radius: 8px;
+}
