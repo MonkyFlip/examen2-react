@@ -1,71 +1,92 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # examen2-react
+
+## Descripción
+Esta aplicación es un proyecto desarrollado como parte del examen de desarrollo móvil. Está creada con **React** y tiene funcionalidad para un inicio de sesión con validación de credenciales y una página que muestra registros en una tabla.
+
+## Funcionalidades
+1. **Inicio de Sesión**:
+   - Valida las credenciales de usuario enviadas a la API para autenticar el acceso.
+   - Si las credenciales son válidas, redirige a la pantalla de registros.
+2. **Visualización de Registros**:
+   - Muestra los usuarios registrados en una tabla, recuperando los datos desde la API.
+3. **Componentización Reutilizable**:
+   - Botón personalizado que es reutilizable en distintas pantallas.
+   - Tabla de usuarios con encabezados para mayor claridad.
+
+## Estructura del Proyecto
+examen2-react/
+├── src/
+│   ├── components/
+│   │   ├── Button.tsx         # Botón reutilizable
+│   │   ├── UsersTable.tsx     # Tabla para mostrar registros
+│   ├── pages/
+│   │   ├── Login.tsx          # Página de inicio de sesión
+│   │   ├── Records.tsx        # Página para visualizar registros
+│   ├── App.tsx                # Componente principal que orquesta las páginas
+├── public/
+├── package.json
+├── README.md
+
+## Instalación
+Sigue estos pasos para ejecutar la aplicación en tu entorno local:
+
+1. Clona el repositorio:
+   git clone <url-del-repositorio>
+
+2. Instala las dependencias necesarias:
+   npm install
+
+3. Inicia la aplicación:
+   npm start
+   
+
+## Configuración de la API
+El proyecto utiliza los siguientes endpoints para comunicarse con la API:
+
+### **Login**
+- **Endpoint**: `POST https://3.12.241.112/login`
+- **Parámetros**:
+  json
+  {
+      "correo": "user@example.com",
+      "password": "123456"
+  }
+- **Respuestas**:
+  - Éxito: `{ "message": "Login exitoso" }`
+  - Error: `{ "message": "Credenciales inválidas" }`
+
+### **Usuarios**
+- **Endpoint**: `GET https://3.12.241.112/users`
+- **Encabezados**:
+ json
+  {
+      "Authorization": "Bearer <token>"
+  }
+- **Respuesta Exitosa**:
+json
+  [
+      { "id": 1, "nombre": "Usuario Uno", "correo": "usuario1@example.com" },
+      { "id": 2, "nombre": "Usuario Dos", "correo": "usuario2@example.com" }
+  ]
+
+
+## Componentes Principales
+1. **Button.tsx**:
+   Un botón reutilizable con estilos personalizados.
+
+2. **UsersTable.tsx**:
+   Tabla para mostrar la lista de usuarios con encabezados organizados.
+
+3. **Login.tsx**:
+   Página de inicio de sesión que valida las credenciales ingresadas.
+
+4. **Records.tsx**:
+   Página que muestra los usuarios registrados en la API.
+
+## Dependencias Utilizadas
+- **React**: Librería principal para crear componentes.
+- **React Router**: Para la navegación entre páginas.
+- **Fetch API**: Para realizar solicitudes HTTP a la API.
+
+## Créditos
+Desarrollado como parte de un proyecto académico para la materia **Desarrollo Móvil Multiplataforma**.
